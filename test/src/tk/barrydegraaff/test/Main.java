@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Properties;
 
 public class Main {
+    static String config = "config.properties"; // This is the config.properties in the repo root
 
     public static void main(String[] args) {
         // write your code here
@@ -22,7 +23,7 @@ public class Main {
     /*Alias Limit is only enforced in the Zimlet*/
     public static boolean checkPermission(String username, String cos, String alias) {
         try {
-            FileInputStream input = new FileInputStream("/home/bar/git/userAlias/config.properties");
+            FileInputStream input = new FileInputStream(config);
             Properties prop = new Properties();
             prop.load(input);
 
@@ -76,7 +77,7 @@ public class Main {
 
     public static String getAllowedAlias(String username, String cos, String alias) {
         try {
-            FileInputStream input = new FileInputStream("/home/bar/git/userAlias/config.properties");
+            FileInputStream input = new FileInputStream(config);
             Properties prop = new Properties();
             prop.load(input);
 
